@@ -19,10 +19,10 @@ return [
     'models' => [
         'plan' => \DanPalmieri\SubscriptionEngine\Models\Plan::class,
         'plan_combination' => \DanPalmieri\SubscriptionEngine\Models\PlanCombination::class,
-        'plan_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanFeature::class,
         'plan_subscription' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscription::class,
-        'plan_subscription_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionFeature::class,
         'plan_subscription_schedule' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule::class,
+        'plan_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanFeature::class,
+        'plan_subscription_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionFeature::class,
         'plan_subscription_usage' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionUsage::class,
     ],
 
