@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
-use Bpuig\Subby\Traits\HasResetDate;
+use DanPalmieri\SubscriptionEngine\Traits\HasResetDate;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
@@ -12,7 +12,7 @@ use InvalidArgumentException;
 
 /**
  * Class PlanSubscriptionFeature
- * @package Bpuig\Subby\Models
+ * @package DanPalmieri\SubscriptionEngine\Models
  */
 class PlanSubscriptionFeature extends Model
 {

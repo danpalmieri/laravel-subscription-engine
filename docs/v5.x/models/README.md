@@ -3,10 +3,10 @@
 **Subby** uses this models:
 
 ```php
-Bpuig\Subby\Models\Plan;
-Bpuig\Subby\Models\PlanFeature;
-Bpuig\Subby\Models\PlanSubscription;
-Bpuig\Subby\Models\PlanSubscriptionFeature;
-Bpuig\Subby\Models\PlanSubscriptionSchedule;
-Bpuig\Subby\Models\PlanSubscriptionUsage;
+DanPalmieri\SubscriptionEngine\Models\Plan;
+DanPalmieri\SubscriptionEngine\Models\PlanFeature;
+DanPalmieri\SubscriptionEngine\Models\PlanSubscription;
+DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionFeature;
+DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
+DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionUsage;
 ```

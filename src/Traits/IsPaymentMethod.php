@@ -1,9 +1,9 @@
 <?php
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
-use Bpuig\Subby\Models\PlanSubscription;
-use Bpuig\Subby\Models\PlanSubscriptionSchedule;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscription;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
 
 trait IsPaymentMethod
 {

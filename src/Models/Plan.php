@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
-use Bpuig\Subby\Exceptions\DuplicateException;
-use Bpuig\Subby\Traits\HasFeatures;
-use Bpuig\Subby\Traits\HasGracePeriod;
-use Bpuig\Subby\Traits\HasPricing;
-use Bpuig\Subby\Traits\HasSubscriptionPeriod;
-use Bpuig\Subby\Traits\HasTrialPeriod;
-use Bpuig\Subby\Traits\MorphsSchedules;
+use DanPalmieri\SubscriptionEngine\Exceptions\DuplicateException;
+use DanPalmieri\SubscriptionEngine\Traits\HasFeatures;
+use DanPalmieri\SubscriptionEngine\Traits\HasGracePeriod;
+use DanPalmieri\SubscriptionEngine\Traits\HasPricing;
+use DanPalmieri\SubscriptionEngine\Traits\HasSubscriptionPeriod;
+use DanPalmieri\SubscriptionEngine\Traits\HasTrialPeriod;
+use DanPalmieri\SubscriptionEngine\Traits\MorphsSchedules;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Plan
- * @package Bpuig\Subby\Models
+ * @package DanPalmieri\SubscriptionEngine\Models
  */
 class Plan extends Model
 {

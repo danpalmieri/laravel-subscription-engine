@@ -1,13 +1,13 @@
 <?php
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class PlanSubscriptionSchedule
- * @package Bpuig\Subby\Models
+ * @package DanPalmieri\SubscriptionEngine\Models
  *
  * @property integer $id
  * @property integer $subscription_id

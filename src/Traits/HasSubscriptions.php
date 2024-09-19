@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
-use Bpuig\Subby\Exceptions\DuplicateException;
-use Bpuig\Subby\Exceptions\InvalidPlanSubscription;
-use Bpuig\Subby\Models\Plan;
-use Bpuig\Subby\Models\PlanCombination;
-use Bpuig\Subby\Models\PlanSubscription;
-use Bpuig\Subby\Services\SubscriptionPeriod;
+use DanPalmieri\SubscriptionEngine\Exceptions\DuplicateException;
+use DanPalmieri\SubscriptionEngine\Exceptions\InvalidPlanSubscription;
+use DanPalmieri\SubscriptionEngine\Models\Plan;
+use DanPalmieri\SubscriptionEngine\Models\PlanCombination;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscription;
+use DanPalmieri\SubscriptionEngine\Services\SubscriptionPeriod;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -87,7 +87,7 @@ trait HasSubscriptions
     /**
      * Get subscribed plans.
      *
-     * @return \Bpuig\Subby\Models\PlanSubscription|null
+     * @return \DanPalmieri\SubscriptionEngine\Models\PlanSubscription|null
      */
     public function subscribedPlans()
     {
@@ -114,7 +114,7 @@ trait HasSubscriptions
      * Subscribe subscriber to a new plan.
      *
      * @param string $tag Identifier tag for the subscription
-     * @param \Bpuig\Subby\Models\Plan|\Bpuig\Subby\Models\PlanCombination $planCombination Plan pricing and invoice data
+     * @param \DanPalmieri\SubscriptionEngine\Models\Plan|\DanPalmieri\SubscriptionEngine\Models\PlanCombination $planCombination Plan pricing and invoice data
      * @param string|null $name Human readable name for your subscriber's subscription
      * @param string|null $description Description for the subscription
      * @param \Carbon\Carbon|null $startDate When will the subscription start

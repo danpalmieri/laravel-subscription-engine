@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Services;
+namespace DanPalmieri\SubscriptionEngine\Services;
 
-use Bpuig\Subby\Models\Plan;
-use Bpuig\Subby\Models\PlanCombination;
+use DanPalmieri\SubscriptionEngine\Models\Plan;
+use DanPalmieri\SubscriptionEngine\Models\PlanCombination;
 use Carbon\Carbon;
 
 /**
@@ -13,7 +13,7 @@ use Carbon\Carbon;
  *
  * Intermediate class to calculate subscription periods accounting trial
  *
- * @package Bpuig\Subby\Services
+ * @package DanPalmieri\SubscriptionEngine\Services
  */
 class SubscriptionPeriod
 {

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
-use Bpuig\Subby\Traits\BelongsToPlan;
-use Bpuig\Subby\Traits\MorphsSchedules;
+use DanPalmieri\SubscriptionEngine\Traits\BelongsToPlan;
+use DanPalmieri\SubscriptionEngine\Traits\MorphsSchedules;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Plan Combination
- * @package Bpuig\Subby\Models
+ * @package DanPalmieri\SubscriptionEngine\Models
  */
 class PlanCombination extends Model
 {

@@ -6,7 +6,7 @@ can [attach it to a subscription](plan-subscription-model.md#create-a-subscripti
 ## Create a Plan
 
 ```php
-use Bpuig\Subby\Models\Plan;
+use DanPalmieri\SubscriptionEngine\Models\Plan;
 
 $plan = Plan::create([
     'tag' => 'basic',

@@ -1,10 +1,10 @@
 <?php
 
-namespace Bpuig\Subby\Jobs;
+namespace DanPalmieri\SubscriptionEngine\Jobs;
 
-use Bpuig\Subby\Models\PlanSubscription;
-use Bpuig\Subby\Models\PlanSubscriptionSchedule;
-use Bpuig\Subby\Services\PendingPaymentCollector;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscription;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
+use DanPalmieri\SubscriptionEngine\Services\PendingPaymentCollector;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

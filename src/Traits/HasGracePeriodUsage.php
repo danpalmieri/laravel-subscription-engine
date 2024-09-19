@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
 
-use Bpuig\Subby\Helpers\CarbonHelper;
+use DanPalmieri\SubscriptionEngine\Helpers\CarbonHelper;
 use Illuminate\Support\Carbon;
 
 trait HasGracePeriodUsage

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
 use BadMethodCallException;
-use Bpuig\Subby\Exceptions\UsageDenied;
-use Bpuig\Subby\Services\Period;
-use Bpuig\Subby\Traits\BelongsToPlan;
-use Bpuig\Subby\Traits\HasFeatures;
-use Bpuig\Subby\Traits\HasGracePeriod;
-use Bpuig\Subby\Traits\HasGracePeriodUsage;
-use Bpuig\Subby\Traits\HasPricing;
-use Bpuig\Subby\Traits\HasSubscriptionPeriodUsage;
-use Bpuig\Subby\Traits\HasTrialPeriodUsage;
-use Bpuig\Subby\Traits\HasSchedules;
+use DanPalmieri\SubscriptionEngine\Exceptions\UsageDenied;
+use DanPalmieri\SubscriptionEngine\Services\Period;
+use DanPalmieri\SubscriptionEngine\Traits\BelongsToPlan;
+use DanPalmieri\SubscriptionEngine\Traits\HasFeatures;
+use DanPalmieri\SubscriptionEngine\Traits\HasGracePeriod;
+use DanPalmieri\SubscriptionEngine\Traits\HasGracePeriodUsage;
+use DanPalmieri\SubscriptionEngine\Traits\HasPricing;
+use DanPalmieri\SubscriptionEngine\Traits\HasSubscriptionPeriodUsage;
+use DanPalmieri\SubscriptionEngine\Traits\HasTrialPeriodUsage;
+use DanPalmieri\SubscriptionEngine\Traits\HasSchedules;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Eloquent\Builder;
@@ -572,7 +572,7 @@ class PlanSubscription extends Model
      * @param string $featureTag
      * @param int $uses
      *
-     * @return \Bpuig\Subby\Models\PlanSubscriptionUsage|null
+     * @return \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionUsage|null
      */
     public function reduceFeatureUsage(string $featureTag, int $uses = 1): ?PlanSubscriptionUsage
     {

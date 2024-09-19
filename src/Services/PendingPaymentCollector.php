@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Services;
+namespace DanPalmieri\SubscriptionEngine\Services;
 
-use Bpuig\Subby\Models\PlanSubscription;
-use Bpuig\Subby\Models\PlanSubscriptionSchedule;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscription;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
 use Carbon\Carbon;
 
 class PendingPaymentCollector

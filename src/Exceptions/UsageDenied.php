@@ -1,6 +1,6 @@
 <?php
 
-namespace Bpuig\Subby\Exceptions;
+namespace DanPalmieri\SubscriptionEngine\Exceptions;
 
 class UsageDenied extends LaravelSubbyException
 {

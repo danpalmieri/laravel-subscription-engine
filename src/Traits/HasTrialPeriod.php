@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
 
-use Bpuig\Subby\Helpers\CarbonHelper;
-use Bpuig\Subby\Services\Period;
+use DanPalmieri\SubscriptionEngine\Helpers\CarbonHelper;
+use DanPalmieri\SubscriptionEngine\Services\Period;
 use Carbon\Carbon;
 
 trait HasTrialPeriod

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Services\PaymentMethods;
+namespace DanPalmieri\SubscriptionEngine\Services\PaymentMethods;
 
-use Bpuig\Subby\Contracts\PaymentMethodService;
-use Bpuig\Subby\Traits\IsPaymentMethod;
+use DanPalmieri\SubscriptionEngine\Contracts\PaymentMethodService;
+use DanPalmieri\SubscriptionEngine\Traits\IsPaymentMethod;
 
 class Free implements PaymentMethodService
 {

@@ -33,7 +33,7 @@ been added.
     // Models
     'models' => [
         ...
-        'plan_subscription_feature' => \Bpuig\Subby\Models\PlanSubscriptionFeature::class,
+        'plan_subscription_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionFeature::class,
         ...
     ],
 ```

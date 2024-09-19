@@ -18,18 +18,18 @@ return [
 
     // Models
     'models' => [
-        'plan' => \Bpuig\Subby\Models\Plan::class,
-        'plan_combination' => \Bpuig\Subby\Models\PlanCombination::class,
-        'plan_feature' => \Bpuig\Subby\Models\PlanFeature::class,
-        'plan_subscription' => \Bpuig\Subby\Models\PlanSubscription::class,
-        'plan_subscription_feature' => \Bpuig\Subby\Models\PlanSubscriptionFeature::class,
-        'plan_subscription_schedule' => \Bpuig\Subby\Models\PlanSubscriptionSchedule::class,
-        'plan_subscription_usage' => \Bpuig\Subby\Models\PlanSubscriptionUsage::class,
+        'plan' => \DanPalmieri\SubscriptionEngine\Models\Plan::class,
+        'plan_combination' => \DanPalmieri\SubscriptionEngine\Models\PlanCombination::class,
+        'plan_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanFeature::class,
+        'plan_subscription' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscription::class,
+        'plan_subscription_feature' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionFeature::class,
+        'plan_subscription_schedule' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule::class,
+        'plan_subscription_usage' => \DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionUsage::class,
     ],
 
     'services' => [
         'payment_methods' => [
-            'free' => \Bpuig\Subby\Services\PaymentMethods\Free::class
+            'free' => \DanPalmieri\SubscriptionEngine\Services\PaymentMethods\Free::class
         ]
     ]
 ];

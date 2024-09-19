@@ -1,8 +1,8 @@
 <?php
 
-namespace Bpuig\Subby\Jobs;
+namespace DanPalmieri\SubscriptionEngine\Jobs;
 
-use Bpuig\Subby\Models\PlanSubscriptionSchedule;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
 use http\Exception\InvalidArgumentException;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

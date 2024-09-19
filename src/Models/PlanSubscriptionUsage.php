@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Models;
+namespace DanPalmieri\SubscriptionEngine\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;

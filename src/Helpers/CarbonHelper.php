@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Bpuig\Subby\Helpers;
+namespace DanPalmieri\SubscriptionEngine\Helpers;
 
 
 class CarbonHelper

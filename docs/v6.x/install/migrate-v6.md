@@ -23,7 +23,7 @@ Added `plan_combinations` under `tables` and models:
     // Models
     'models' => [
         ...
-        'plan_combinations' => \Bpuig\Subby\Models\PlanCombination::class,
+        'plan_combinations' => \DanPalmieri\SubscriptionEngine\Models\PlanCombination::class,
     ...
     ]
 ```
@@ -33,7 +33,7 @@ Added `payment_methods`, `'services'` now look should like this:
 ```php 
 'services' => [
     'payment_methods' => [
-        'free' => \Bpuig\Subby\Services\PaymentMethods\Free::class
+        'free' => \DanPalmieri\SubscriptionEngine\Services\PaymentMethods\Free::class
     ]
 ]
 ```
@@ -45,7 +45,7 @@ In `'services'`:
 ```php 
 'services' => [
     'schedule' => [
-        'default' => \Bpuig\Subby\Services\ScheduleService::class
+        'default' => \DanPalmieri\SubscriptionEngine\Services\ScheduleService::class
     ]
 ]
 ```

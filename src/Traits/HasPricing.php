@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
 
 trait HasPricing

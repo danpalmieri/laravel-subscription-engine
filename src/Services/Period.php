@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Services;
+namespace DanPalmieri\SubscriptionEngine\Services;
 
-use Bpuig\Subby\Helpers\CarbonHelper;
+use DanPalmieri\SubscriptionEngine\Helpers\CarbonHelper;
 use Carbon\Carbon;
 
 class Period

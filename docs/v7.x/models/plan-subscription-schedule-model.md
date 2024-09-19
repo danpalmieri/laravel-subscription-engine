@@ -75,10 +75,10 @@ the process and flag it as failed. If no exceptions are raised, it means payment
 
 declare(strict_types=1);
 
-namespace Bpuig\Subby\Services;
+namespace DanPalmieri\SubscriptionEngine\Services;
 
-use Bpuig\Subby\Contracts\PlanSubscriptionScheduleService;
-use Bpuig\Subby\Models\PlanSubscriptionSchedule;
+use DanPalmieri\SubscriptionEngine\Contracts\PlanSubscriptionScheduleService;
+use DanPalmieri\SubscriptionEngine\Models\PlanSubscriptionSchedule;
 use function app;
 
 class ScheduleService implements PlanSubscriptionScheduleService

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Bpuig\Subby\Traits;
+namespace DanPalmieri\SubscriptionEngine\Traits;
 
 
-use Bpuig\Subby\Services\Period;
+use DanPalmieri\SubscriptionEngine\Services\Period;
 use Carbon\Carbon;
 
 trait HasResetDate

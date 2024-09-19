@@ -18,7 +18,7 @@ Changed `plan_combinations` to `plan_combination` in models:
     // Models
     'models' => [
         ...
-        'plan_combination' => \Bpuig\Subby\Models\PlanCombination::class,
+        'plan_combination' => \DanPalmieri\SubscriptionEngine\Models\PlanCombination::class,
     ...
     ]
 ```
