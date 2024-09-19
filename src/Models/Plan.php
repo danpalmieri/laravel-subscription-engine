@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
  */
 class Plan extends Model
 {
-    use SoftDeletes, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules, HasUlids;
+    use SoftDeletes, HasFeatures, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules, HasUlids;
 
     /**
      * {@inheritdoc}
@@ -140,6 +140,16 @@ class Plan extends Model
     public function combinations(): HasMany
     {
         return $this->hasMany(config('subscription_engine.models.plan_combination'), 'plan_id', 'id');
+    }
+
+    /**
+     * The plan may have many features.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function features(): HasMany
+    {
+        return $this->hasMany(config('subscription_engine.models.plan_feature'), 'plan_id', 'id');
     }
 
     /**
