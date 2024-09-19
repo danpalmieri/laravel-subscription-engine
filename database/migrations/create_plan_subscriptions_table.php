@@ -20,7 +20,7 @@ return new class extends Migration
             $table->ulid('ulid');
             $table->string('tag');
             $table->morphs('subscriber');
-            $table->unsignedInteger('plan_id')->nullable();
+            $table->unsignedBigInteger('plan_id')->nullable();
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->decimal('price')->default('0.00');

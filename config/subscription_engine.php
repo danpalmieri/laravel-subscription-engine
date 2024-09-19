@@ -5,15 +5,14 @@ declare(strict_types=1);
 return [
     'main_subscription_tag' => 'main',
     'fallback_plan_tag' => null,
-    // Database Tables
+    
     'tables' => [
         'plans' => 'plans',
         'plan_combinations' => 'plan_combinations',
         'plan_subscriptions' => 'plan_subscriptions',
         'plan_subscription_schedules' => 'plan_subscription_schedules',
     ],
-
-    // Models
+    
     'models' => [
         'plan' => \DanPalmieri\SubscriptionEngine\Models\Plan::class,
         'plan_combination' => \DanPalmieri\SubscriptionEngine\Models\PlanCombination::class,
