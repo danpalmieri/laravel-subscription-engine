@@ -1,11 +1,11 @@
-<img src="https://repository-images.githubusercontent.com/312531331/83fd5e80-9ec8-11eb-9b6a-210d761a536e" alt="Social Card of Laravel Subby">
+<img src="https://banners.beyondco.de/Laravel%20Subscription%20Engine.png?theme=light&packageManager=composer+require&packageName=danpalmieri%2Flaravel-subscription-engine&pattern=architect&style=style_1&description=Plan+and+subscription+manager.&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="Social Card of Laravel ">
 
-# Laravel Subby
+# Laravel Subscription Engine
 
-**Laravel Subby** is a flexible plans and subscription management system for Laravel. You can also schedule plan
+**Laravel Subscription Engine** is a flexible plans and subscription management system for Laravel. You can also schedule plan
 changes.
 
-Originally forked from [rinvex/laravel-subscriptions](https://github.com/rinvex/laravel-subscriptions).
+Originally forked from [bpuig/laravel-subby](https://github.com/bpuig/laravel-subby).
 
 ## Documentation
 Find here the [documentation](https://bpuig.github.io/laravel-subby/).
@@ -14,7 +14,7 @@ Find here the [documentation](https://bpuig.github.io/laravel-subby/).
 
 Current stable version is v7. Click on each version to read documentation.
 
-| Laravel | Laravel Subby                                                                                                                                                 |
+| Laravel | Laravel                                                                                                                                                  |
 |:--------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 10.x    | [v7.x](https://bpuig.github.io/laravel-subby/v7.x/)                                                                                                                                                               |
 | 9.x     | [v6.x](https://bpuig.github.io/laravel-subby/v6.x/), [v7.x](https://bpuig.github.io/laravel-subby/v7.x/)                                                      |
