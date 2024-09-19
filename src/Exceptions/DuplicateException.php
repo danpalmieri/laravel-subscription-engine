@@ -2,6 +2,6 @@
 
 namespace DanPalmieri\SubscriptionEngine\Exceptions;
 
-class DuplicateException extends LaravelSubbyException
+class DuplicateException extends LaravelSubscriptionEngineException
 {
 }

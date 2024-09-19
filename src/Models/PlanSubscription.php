@@ -88,7 +88,7 @@ class PlanSubscription extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_subscriptions'));
+        $this->setTable(config('subscription_engine.tables.plan_subscriptions'));
     }
 
     /**
@@ -102,14 +102,14 @@ class PlanSubscription extends Model
                 'required',
                 'alpha_dash',
                 'max:150',
-                Rule::unique(config('subby.tables.plan_subscriptions'))->where(function ($query) {
+                Rule::unique(config('subscription_engine.tables.plan_subscriptions'))->where(function ($query) {
                     return $query->where('id', '!=', $this->id)->where('subscriber_type', $this->subscriber_type)
                         ->where('subscriber_id', $this->subscriber_id);
                 }),
             ],
             'subscriber_id' => 'required|integer',
             'subscriber_type' => 'required|string|max:150',
-            'plan_id' => 'required|exists:' . config('subby.tables.plans') . ',id',
+            'plan_id' => 'required|exists:' . config('subscription_engine.tables.plans') . ',id',
             'name' => 'required|string|max:150',
             'description' => 'nullable|string|max:32768',
             'price' => 'required|numeric',
@@ -146,7 +146,7 @@ class PlanSubscription extends Model
      */
     public function features(): HasMany
     {
-        return $this->hasMany(config('subby.models.plan_subscription_feature'), 'plan_subscription_id', 'id');
+        return $this->hasMany(config('subscription_engine.models.plan_subscription_feature'), 'plan_subscription_id', 'id');
     }
 
     /**
@@ -157,8 +157,8 @@ class PlanSubscription extends Model
     public function usage(): \Illuminate\Database\Eloquent\Relations\HasManyThrough
     {
         return $this->hasManyThrough(
-            config('subby.models.plan_subscription_usage'),
-            config('subby.models.plan_subscription_feature'),
+            config('subscription_engine.models.plan_subscription_usage'),
+            config('subscription_engine.models.plan_subscription_feature'),
             'plan_subscription_id',
             'plan_subscription_feature_id',
             'id',
@@ -188,10 +188,10 @@ class PlanSubscription extends Model
      */
     public function cancel(bool $immediately = false, bool $ignoreFallback = false): PlanSubscription
     {
-        if (!$ignoreFallback && config('subby.fallback_plan_tag')) { // Do not cancel if a fallback plan is set
-            $plan = Plan::getByTag(config('subby.fallback_plan_tag'));
+        if (!$ignoreFallback && config('subscription_engine.fallback_plan_tag')) { // Do not cancel if a fallback plan is set
+            $plan = Plan::getByTag(config('subscription_engine.fallback_plan_tag'));
             if (!$plan) {
-                throw new UnexpectedValueException('Fallback plan ' . config('subby.fallback_plan_tag') . ' does not exist.');
+                throw new UnexpectedValueException('Fallback plan ' . config('subscription_engine.fallback_plan_tag') . ' does not exist.');
             }
             $this->changePlan($plan);
         } else {

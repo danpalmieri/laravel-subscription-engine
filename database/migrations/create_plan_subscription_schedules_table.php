@@ -14,7 +14,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create(config('subby.tables.plan_subscription_schedules'), function (Blueprint $table) {
+        Schema::create(config('subscription_engine.tables.plan_subscription_schedules'), function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('subscription_id');
             $table->morphs('scheduleable', 'scheduleable_index');
@@ -24,7 +24,7 @@ return new class extends Migration {
 
             $table->unique(['subscription_id', 'scheduleable_type', 'scheduleable_id', 'scheduled_at'], 'unique_plan_subscription_keys');
 
-            $table->foreign('subscription_id', 'plan_subscription_fk')->references('id')->on(config('subby.tables.plan_subscriptions'))->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('subscription_id', 'plan_subscription_fk')->references('id')->on(config('subscription_engine.tables.plan_subscriptions'))->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -35,6 +35,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('subby.tables.plan_subscription_schedules'));
+        Schema::dropIfExists(config('subscription_engine.tables.plan_subscription_schedules'));
     }
 };

@@ -38,8 +38,8 @@ class SubscriptionEngineServiceProvider extends ServiceProvider
     protected function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/../config/config.php' => config_path('subby.php')
-        ], 'subby.config');
+            __DIR__ . '/../config/config.php' => config_path('config.php')
+        ], 'subscription_engine.config');
     }
 
 
@@ -61,7 +61,7 @@ class SubscriptionEngineServiceProvider extends ServiceProvider
         ], 'subby.migrations');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations/v7.0.0/alter_plan_combinations_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_alter_plan_combinations_table.php'),
+            __DIR__ . '/../database/migrations/v1.0.0/alter_plan_combinations_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_alter_plan_combinations_table.php'),
         ], 'subby.migrations.v7');
     }
 

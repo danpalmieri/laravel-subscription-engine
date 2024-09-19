@@ -2,7 +2,7 @@
 
 namespace DanPalmieri\SubscriptionEngine\Exceptions;
 
-class InvalidPlanSubscription extends LaravelSubbyException
+class InvalidPlanSubscription extends LaravelSubscriptionEngineException
 {
     public function __construct($subscriptionTag = "")
     {

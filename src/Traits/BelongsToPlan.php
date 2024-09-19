@@ -16,7 +16,7 @@ trait BelongsToPlan
      */
     public function plan(): BelongsTo
     {
-        return $this->belongsTo(config('subby.models.plan'), 'plan_id', 'id', 'plan');
+        return $this->belongsTo(config('subscription_engine.models.plan'), 'plan_id', 'id', 'plan');
     }
 
     /**

@@ -32,6 +32,8 @@ class ArrayComparator extends Comparator
     }
 
     /**
+     * @param array<mixed> $processed
+     *
      * @throws ComparisonFailure
      */
     public function assertEquals(mixed $expected, mixed $actual, float $delta = 0.0, bool $canonicalize = false, bool $ignoreCase = false, array &$processed = []): void
@@ -72,6 +74,8 @@ class ArrayComparator extends Comparator
 
             try {
                 $comparator = $this->factory()->getComparatorFor($value, $actual[$key]);
+
+                /** @phpstan-ignore arguments.count */
                 $comparator->assertEquals($value, $actual[$key], $delta, $canonicalize, $ignoreCase, $processed);
 
                 $expectedAsString .= sprintf(

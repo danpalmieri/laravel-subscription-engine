@@ -48,7 +48,7 @@ class PlanFeature extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_features'));
+        $this->setTable(config('subscription_engine.tables.plan_features'));
     }
 
     /**
@@ -61,11 +61,11 @@ class PlanFeature extends Model
             'tag' => [
                 'required',
                 'max:150',
-                Rule::unique(config('subby.tables.plan_features'))->where(function ($query) {
+                Rule::unique(config('subscription_engine.tables.plan_features'))->where(function ($query) {
                     return $query->where('id', '!=', $this->id)->where('plan_id', $this->plan_id);
                 }),
             ],
-            'plan_id' => 'required|integer|exists:' . config('subby.tables.plans') . ',id',
+            'plan_id' => 'required|integer|exists:' . config('subscription_engine.tables.plans') . ',id',
             'name' => 'required|string|max:150',
             'description' => 'nullable|string|max:32768',
             'value' => 'required|string',

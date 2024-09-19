@@ -73,7 +73,7 @@ class Plan extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plans'));
+        $this->setTable(config('subscription_engine.tables.plans'));
     }
 
     /**
@@ -83,7 +83,7 @@ class Plan extends Model
     public function getRules(): array
     {
         return [
-            'tag' => 'required|max:150|unique:' . config('subby.tables.plans') . ',tag',
+            'tag' => 'required|max:150|unique:' . config('subscription_engine.tables.plans') . ',tag',
             'name' => 'required|string|max:150',
             'description' => 'nullable|string|max:32768',
             'is_active' => 'sometimes|boolean',
@@ -128,7 +128,7 @@ class Plan extends Model
      */
     public function combinations(): HasMany
     {
-        return $this->hasMany(config('subby.models.plan_combination'), 'plan_id', 'id');
+        return $this->hasMany(config('subscription_engine.models.plan_combination'), 'plan_id', 'id');
     }
 
     /**
@@ -138,7 +138,7 @@ class Plan extends Model
      */
     public function features(): HasMany
     {
-        return $this->hasMany(config('subby.models.plan_feature'), 'plan_id', 'id');
+        return $this->hasMany(config('subscription_engine.models.plan_feature'), 'plan_id', 'id');
     }
 
     /**
@@ -148,7 +148,7 @@ class Plan extends Model
      */
     public function subscriptions(): HasMany
     {
-        return $this->hasMany(config('subby.models.plan_subscription'), 'plan_id', 'id');
+        return $this->hasMany(config('subscription_engine.models.plan_subscription'), 'plan_id', 'id');
     }
 
     /**

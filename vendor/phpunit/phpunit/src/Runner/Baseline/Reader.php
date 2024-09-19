@@ -27,10 +27,10 @@ use PHPUnit\Util\Xml\XmlException;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-final class Reader
+final readonly class Reader
 {
     /**
-     * @psalm-param non-empty-string $baselineFile
+     * @param non-empty-string $baselineFile
      *
      * @throws CannotLoadBaselineException
      */

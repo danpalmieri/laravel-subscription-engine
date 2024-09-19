@@ -32,7 +32,7 @@ class SubscriptionRenewalPaymentJob implements ShouldQueue
         $this->planSubscription = PlanSubscription::find($planSubscriptionId);
 
         // Retrieve service name from config
-        $paymentMethod = config('subby.services.payment_methods.' . $this->planSubscription->payment_method);
+        $paymentMethod = config('subscription_engine.services.payment_methods.' . $this->planSubscription->payment_method);
 
         // Check if service exists in config file
         if (empty($paymentMethod)) {

@@ -37,7 +37,7 @@ trait HasSubscriptions
      */
     public function subscriptions(): MorphMany
     {
-        return $this->morphMany(config('subby.models.plan_subscription'), 'subscriber', 'subscriber_type', 'subscriber_id');
+        return $this->morphMany(config('subscription_engine.models.plan_subscription'), 'subscriber', 'subscriber_type', 'subscriber_id');
     }
 
     /**
@@ -69,7 +69,7 @@ trait HasSubscriptions
             }
         }
 
-        $subscriptionTag = $subscriptionTag ?? config('subby.main_subscription_tag');
+        $subscriptionTag = $subscriptionTag ?? config('subscription_engine.main_subscription_tag');
 
         if (!$subscriptionTag) {
             throw new InvalidArgumentException('Subscription tag not provided and default config is empty.');
@@ -93,7 +93,7 @@ trait HasSubscriptions
     {
         $planIds = $this->subscriptions->reject->isInactive()->pluck('plan_id')->unique();
 
-        return app(config('subby.models.plan'))->whereIn('id', $planIds)->get();
+        return app(config('subscription_engine.models.plan'))->whereIn('id', $planIds)->get();
     }
 
     /**
@@ -124,7 +124,7 @@ trait HasSubscriptions
      */
     public function newSubscription(?string $tag, Plan|PlanCombination $planCombination, ?string $name = null, ?string $description = null, ?Carbon $startDate = null, $paymentMethod = 'free')
     {
-        $tag = $tag ?? config('subby.main_subscription_tag');
+        $tag = $tag ?? config('subscription_engine.main_subscription_tag');
 
         $plan = ($planCombination instanceof PlanCombination) ? $planCombination->plan : $planCombination;
 

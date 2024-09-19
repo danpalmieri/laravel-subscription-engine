@@ -47,7 +47,7 @@ class PlanSubscriptionSchedule extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_subscription_schedules'));
+        $this->setTable(config('subscription_engine.tables.plan_subscription_schedules'));
     }
 
     /**
@@ -57,7 +57,7 @@ class PlanSubscriptionSchedule extends Model
     public function getRules(): array
     {
         return [
-            'subscription_id' => 'required|integer|exists:' . config('subby.tables.plan_subscriptions') . ',id',
+            'subscription_id' => 'required|integer|exists:' . config('subscription_engine.tables.plan_subscriptions') . ',id',
             'scheduled_at' => 'date'
         ];
     }
@@ -69,7 +69,7 @@ class PlanSubscriptionSchedule extends Model
      */
     public function subscription()
     {
-        return $this->belongsTo(config('subby.models.plan_subscription'), 'subscription_id', 'id');
+        return $this->belongsTo(config('subscription_engine.models.plan_subscription'), 'subscription_id', 'id');
     }
 
     /**

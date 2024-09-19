@@ -2,7 +2,7 @@
 
 namespace DanPalmieri\SubscriptionEngine\Exceptions;
 
-class UsageDenied extends LaravelSubbyException
+class UsageDenied extends LaravelSubscriptionEngineException
 {
     public function __construct($featureTag = '')
     {

@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('subby.tables.plans'), function (Blueprint $table) {
+        Schema::create(config('subscription_engine.tables.plans'), function (Blueprint $table) {
             // Columns
             $table->increments('id');
             $table->string('tag')->unique();
@@ -45,6 +45,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('subby.tables.plans'));
+        Schema::dropIfExists(config('subscription_engine.tables.plans'));
     }
 };

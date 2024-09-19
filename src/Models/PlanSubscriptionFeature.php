@@ -53,7 +53,7 @@ class PlanSubscriptionFeature extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_subscription_features'));
+        $this->setTable(config('subscription_engine.tables.plan_subscription_features'));
     }
 
     /**
@@ -66,11 +66,11 @@ class PlanSubscriptionFeature extends Model
             'tag' => [
                 'required',
                 'max:150',
-                Rule::unique(config('subby.tables.plan_subscription_features'))->where(function ($query) {
+                Rule::unique(config('subscription_engine.tables.plan_subscription_features'))->where(function ($query) {
                     return $query->where('id', '!=', $this->id)->where('plan_subscription_id', $this->plan_subscription_id);
                 }),
             ],
-            'plan_subscription_id' => 'required|integer|exists:' . config('subby.tables.plan_subscriptions') . ',id',
+            'plan_subscription_id' => 'required|integer|exists:' . config('subscription_engine.tables.plan_subscriptions') . ',id',
             'plan_feature_id' => 'nullable|integer',
             'name' => 'required|string|max:150',
             'description' => 'nullable|string|max:32768',
@@ -89,7 +89,7 @@ class PlanSubscriptionFeature extends Model
      */
     public function subscription()
     {
-        return $this->belongsTo(config('subby.models.plan_subscription'), 'plan_subscription_id', 'id');
+        return $this->belongsTo(config('subscription_engine.models.plan_subscription'), 'plan_subscription_id', 'id');
     }
 
     /**
@@ -99,7 +99,7 @@ class PlanSubscriptionFeature extends Model
      */
     public function feature()
     {
-        return $this->belongsTo(config('subby.models.plan_feature'), 'plan_feature_id', 'id');
+        return $this->belongsTo(config('subscription_engine.models.plan_feature'), 'plan_feature_id', 'id');
     }
 
     /**
@@ -109,7 +109,7 @@ class PlanSubscriptionFeature extends Model
      */
     public function usage()
     {
-        return $this->hasOne(config('subby.models.plan_subscription_usage'), 'plan_subscription_feature_id', 'id');
+        return $this->hasOne(config('subscription_engine.models.plan_subscription_usage'), 'plan_subscription_feature_id', 'id');
     }
 
     /**

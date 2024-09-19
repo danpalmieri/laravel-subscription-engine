@@ -37,7 +37,7 @@ trait HasSchedules
      */
     public function schedules(): hasMany
     {
-        return $this->hasMany(config('subby.models.plan_subscription_schedule'), 'subscription_id', 'id');
+        return $this->hasMany(config('subscription_engine.models.plan_subscription_schedule'), 'subscription_id', 'id');
     }
 
     /**
@@ -96,7 +96,7 @@ trait HasSchedules
             $date = Carbon::now();
         }
 
-        return app(config('subby.models.plan_subscription_schedule'))
+        return app(config('subscription_engine.models.plan_subscription_schedule'))
             ->pending($date)
             ->where('subscription_id', $this->id)
             ->orderBy('scheduled_at', 'DESC')
@@ -114,7 +114,7 @@ trait HasSchedules
             $date = Carbon::now();
         }
 
-        return app(config('subby.models.plan_subscription_schedule'))
+        return app(config('subscription_engine.models.plan_subscription_schedule'))
             ->where('subscription_id', $this->id)
             ->unprocessed()
             ->where('scheduled_at', '>', $date)

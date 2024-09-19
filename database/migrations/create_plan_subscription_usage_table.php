@@ -15,14 +15,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('subby.tables.plan_subscription_usage'), function (Blueprint $table) {
+        Schema::create(config('subscription_engine.tables.plan_subscription_usage'), function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('plan_subscription_feature_id')->unique();
             $table->unsignedInteger('used');
             $table->timestamp('valid_until')->nullable();
             $table->timestamps();
 
-            $table->foreign('plan_subscription_feature_id')->references('id')->on(config('subby.tables.plan_subscription_features'))
+            $table->foreign('plan_subscription_feature_id')->references('id')->on(config('subscription_engine.tables.plan_subscription_features'))
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('subby.tables.plan_subscription_usage'));
+        Schema::dropIfExists(config('subscription_engine.tables.plan_subscription_usage'));
     }
 };

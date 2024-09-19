@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('subby.tables.plan_features'), function (Blueprint $table) {
+        Schema::create(config('subscription_engine.tables.plan_features'), function (Blueprint $table) {
             // Columns
             $table->increments('id');
             $table->string('tag');
@@ -30,7 +30,7 @@ return new class extends Migration
 
             // Indexes
             $table->unique(['tag', 'plan_id']);
-            $table->foreign('plan_id')->references('id')->on(config('subby.tables.plans'))
+            $table->foreign('plan_id')->references('id')->on(config('subscription_engine.tables.plans'))
                 ->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -42,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('subby.tables.plan_features'));
+        Schema::dropIfExists(config('subscription_engine.tables.plan_features'));
     }
 };

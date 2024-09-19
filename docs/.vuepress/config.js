@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'Laravel Subby',
-    description: 'Laravel Subby is a flexible plans and subscription management system for Laravel.',
+    title: 'Laravel Subscription Engine',
+    description: 'Laravel Subscription Engine is a flexible plans and subscription management system for Laravel.',
 
     /**
      * Extra tags to be injected to the page HTML `<head>`

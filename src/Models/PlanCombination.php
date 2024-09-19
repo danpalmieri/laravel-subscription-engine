@@ -52,7 +52,7 @@ class PlanCombination extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_combinations'));
+        $this->setTable(config('subscription_engine.tables.plan_combinations'));
     }
 
     /**
@@ -62,12 +62,12 @@ class PlanCombination extends Model
     public function getRules(): array
     {
         return [
-            'plan_id' => 'required|exists:' . config('subby.tables.plans') . ',id',
+            'plan_id' => 'required|exists:' . config('subscription_engine.tables.plans') . ',id',
             'tag' => [
                 'required',
                 'alpha_dash',
                 'max:300',
-                Rule::unique(config('subby.tables.plan_combinations'))->where(function ($query) {
+                Rule::unique(config('subscription_engine.tables.plan_combinations'))->where(function ($query) {
                     return $query->where('id', '!=', $this->id);
                 }),
             ],

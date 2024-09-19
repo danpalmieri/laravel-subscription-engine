@@ -10,6 +10,7 @@
 namespace PHPUnit\TextUI\Command;
 
 use const PHP_EOL;
+use function assert;
 use function file_get_contents;
 use function sprintf;
 use function version_compare;
@@ -22,15 +23,22 @@ use PHPUnit\Runner\Version;
  *
  * @codeCoverageIgnore
  */
-final class VersionCheckCommand implements Command
+final readonly class VersionCheckCommand implements Command
 {
     public function execute(): Result
     {
-        $latestVersion           = file_get_contents('https://phar.phpunit.de/latest-version-of/phpunit');
-        $latestCompatibleVersion = file_get_contents('https://phar.phpunit.de/latest-version-of/phpunit-' . Version::majorVersionNumber());
+        $latestVersion = file_get_contents('https://phar.phpunit.de/latest-version-of/phpunit');
+
+        assert($latestVersion !== false);
+
+        $latestCompatibleVersion = @file_get_contents('https://phar.phpunit.de/latest-version-of/phpunit-' . Version::majorVersionNumber());
 
         $notLatest           = version_compare($latestVersion, Version::id(), '>');
-        $notLatestCompatible = version_compare($latestCompatibleVersion, Version::id(), '>');
+        $notLatestCompatible = false;
+
+        if ($latestCompatibleVersion !== false) {
+            $notLatestCompatible = version_compare($latestCompatibleVersion, Version::id(), '>');
+        }
 
         if (!$notLatest && !$notLatestCompatible) {
             return Result::from(
@@ -55,6 +63,6 @@ final class VersionCheckCommand implements Command
             );
         }
 
-        return Result::from($buffer);
+        return Result::from($buffer, Result::FAILURE);
     }
 }

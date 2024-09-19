@@ -9,6 +9,6 @@ trait MorphsSchedules
      */
     public function schedules()
     {
-        return $this->morphMany(config('subby.models.plan_subscription_schedule'), 'scheduleable');
+        return $this->morphMany(config('subscription_engine.models.plan_subscription_schedule'), 'scheduleable');
     }
 }

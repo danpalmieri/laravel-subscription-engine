@@ -38,7 +38,7 @@ class PlanSubscriptionUsage extends Model
     {
         parent::__construct($attributes);
 
-        $this->setTable(config('subby.tables.plan_subscription_usage'));
+        $this->setTable(config('subscription_engine.tables.plan_subscription_usage'));
     }
 
     /**
@@ -48,7 +48,7 @@ class PlanSubscriptionUsage extends Model
     public function getRules(): array
     {
         return [
-            'plan_subscription_feature_id' => 'required|integer|exists:' . config('subby.tables.plan_features') . ',id',
+            'plan_subscription_feature_id' => 'required|integer|exists:' . config('subscription_engine.tables.plan_features') . ',id',
             'used' => 'required|integer',
             'valid_until' => 'nullable|date',
         ];
@@ -61,7 +61,7 @@ class PlanSubscriptionUsage extends Model
      */
     public function feature(): BelongsTo
     {
-        return $this->belongsTo(config('subby.models.plan_subscription_feature'), 'plan_subscription_feature_id', 'id', 'feature');
+        return $this->belongsTo(config('subscription_engine.models.plan_subscription_feature'), 'plan_subscription_feature_id', 'id', 'feature');
     }
 
     /**

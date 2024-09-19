@@ -37,13 +37,13 @@ use PHPUnit\Runner\Version;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-final class Requirements
+final readonly class Requirements
 {
     /**
-     * @psalm-param class-string $className
-     * @psalm-param non-empty-string $methodName
+     * @param class-string     $className
+     * @param non-empty-string $methodName
      *
-     * @psalm-return list<string>
+     * @return list<string>
      */
     public function requirementsNotSatisfiedFor(string $className, string $methodName): array
     {
