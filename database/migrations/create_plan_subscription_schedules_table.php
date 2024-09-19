@@ -16,7 +16,7 @@ return new class extends Migration {
     {
         Schema::create(config('subscription_engine.tables.plan_subscription_schedules'), function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('subscription_id');
+            $table->unsignedBigInteger('subscription_id');
             $table->morphs('scheduleable', 'scheduleable_index');
             $table->timestamp('scheduled_at')->nullable();
             $table->timestamp('failed_at')->nullable();
