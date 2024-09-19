@@ -143,16 +143,6 @@ class Plan extends Model
     }
 
     /**
-     * The plan may have many features.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function features(): HasMany
-    {
-        return $this->hasMany(config('subscription_engine.models.plan_feature'), 'plan_id', 'id');
-    }
-
-    /**
      * The plan may have many subscriptions.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
