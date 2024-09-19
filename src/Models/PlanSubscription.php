@@ -27,7 +27,7 @@ use UnexpectedValueException;
 
 class PlanSubscription extends Model
 {
-    use BelongsToPlan, HasSchedules, HasFeatures, HasPricing, HasTrialPeriodUsage, HasSubscriptionPeriodUsage, HasGracePeriod, HasGracePeriodUsage;
+    use BelongsToPlan, HasSchedules, HasPricing, HasTrialPeriodUsage, HasSubscriptionPeriodUsage, HasGracePeriod, HasGracePeriodUsage;
 
     /**
      * {@inheritdoc}

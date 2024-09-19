@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Plan extends Model
 {
-    use SoftDeletes, HasFeatures, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules;
+    use SoftDeletes, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules;
 
     /**
      * {@inheritdoc}
