@@ -14,6 +14,7 @@ return new class extends Migration {
     {
         Schema::create(config('subscription_engine.tables.plan_combinations'), function (Blueprint $table) {
             $table->id();
+            $table->ulid('ulid');
             $table->unsignedInteger('plan_id')->nullable();
             $table->string('tag')->unique();
             $table->char('country', 3);

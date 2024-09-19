@@ -16,7 +16,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create(config('subscription_engine.tables.plan_subscriptions'), function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
+            $table->ulid('ulid');
             $table->string('tag');
             $table->morphs('subscriber');
             $table->unsignedInteger('plan_id')->nullable();

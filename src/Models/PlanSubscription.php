@@ -23,11 +23,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Validation\Rule;
 use LogicException;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use UnexpectedValueException;
 
 class PlanSubscription extends Model
 {
-    use BelongsToPlan, HasSchedules, HasPricing, HasTrialPeriodUsage, HasSubscriptionPeriodUsage, HasGracePeriod, HasGracePeriodUsage;
+    use BelongsToPlan, HasUlids, HasSchedules, HasPricing, HasTrialPeriodUsage, HasSubscriptionPeriodUsage, HasGracePeriod, HasGracePeriodUsage;
 
     /**
      * {@inheritdoc}
@@ -89,6 +90,16 @@ class PlanSubscription extends Model
         parent::__construct($attributes);
 
         $this->setTable(config('subscription_engine.tables.plan_subscriptions'));
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'ulid';
+    }
+
+    public function uniqueIds(): array
+    {
+        return ['ulid'];
     }
 
     /**

@@ -8,6 +8,7 @@ use DanPalmieri\SubscriptionEngine\Traits\BelongsToPlan;
 use DanPalmieri\SubscriptionEngine\Traits\MorphsSchedules;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 
 /**
  * Class Plan Combination
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PlanCombination extends Model
 {
-    use BelongsToPlan, MorphsSchedules;
+    use BelongsToPlan, MorphsSchedules, HasUlids;
 
     /**
      * {@inheritdoc}
@@ -53,6 +54,16 @@ class PlanCombination extends Model
         parent::__construct($attributes);
 
         $this->setTable(config('subscription_engine.tables.plan_combinations'));
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'ulid';
+    }
+
+    public function uniqueIds(): array
+    {
+        return ['ulid'];
     }
 
     /**

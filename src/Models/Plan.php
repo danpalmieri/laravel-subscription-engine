@@ -14,6 +14,7 @@ use DanPalmieri\SubscriptionEngine\Traits\MorphsSchedules;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
 
 /**
  * Class Plan
@@ -21,7 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Plan extends Model
 {
-    use SoftDeletes, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules;
+    use SoftDeletes, HasPricing, HasTrialPeriod, HasSubscriptionPeriod, HasGracePeriod, MorphsSchedules, HasUlids;
 
     /**
      * {@inheritdoc}
@@ -74,6 +75,16 @@ class Plan extends Model
         parent::__construct($attributes);
 
         $this->setTable(config('subscription_engine.tables.plans'));
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'ulid';
+    }
+
+    public function uniqueIds(): array
+    {
+        return ['ulid'];
     }
 
     /**

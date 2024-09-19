@@ -17,7 +17,8 @@ return new class extends Migration
     {
         Schema::create(config('subscription_engine.tables.plans'), function (Blueprint $table) {
             // Columns
-            $table->increments('id');
+            $table->id();
+            $table->ulid('ulid');
             $table->string('tag')->unique();
             $table->string('name');
             $table->string('description')->nullable();
