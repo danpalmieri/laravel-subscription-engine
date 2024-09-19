@@ -14,9 +14,9 @@ Find here the [documentation](https://bpuig.github.io/laravel-subby/). -->
 
 Current stable version is v1. Click on each version to read documentation.
 
-| Laravel | Laravel                                                                                                                                                  |
+| Laravel | Package                                                                                                                                                  |
 |:--------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 11.x    | [v1.x](https://bpuig.github.io/laravel-subby/v7.x/)                                                                                                                                                               |                                                                           |
+| 11.x    | [v1.x](https://danpalmieri.github.io/laravel-subscription-engine/v1.x/)                                                                                                                                                               |                                                                           |
 
 ## Changelog
 
