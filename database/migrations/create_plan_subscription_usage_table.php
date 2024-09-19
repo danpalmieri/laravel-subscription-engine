@@ -16,9 +16,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create(config('subscription_engine.tables.plan_subscription_usage'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('plan_subscription_feature_id')->unique();
-            $table->unsignedInteger('used');
+            $table->id();
+            $table->unsignedBigInteger('plan_subscription_feature_id')->unique();
+            $table->unsignedBigInteger('used');
             $table->timestamp('valid_until')->nullable();
             $table->timestamps();
 
